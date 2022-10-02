@@ -1,0 +1,12 @@
+import UIKit
+import Factory
+import CoreModuleInterface
+
+public protocol {{ name }}ModuleInterface: ModuleInterface {
+}
+
+extension Container {
+    public static var {{ name|lowercase }}Module = Factory<{{ name }}ModuleInterface?> {
+        nil
+    }
+}

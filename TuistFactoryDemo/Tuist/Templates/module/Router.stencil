@@ -1,0 +1,29 @@
+import UIKit
+import {{ name }}ModuleInterface
+import Factory
+
+// MARK: - {{ name }}RouterInterface
+protocol {{ name }}RouterInterface {
+}
+// MARK: - {{ name }}ModuleInterface
+public final class {{ name }}Router: {{ name }}ModuleInterface {
+    // MARK: - Properties
+    weak var navigationController: UINavigationController?
+    // MARK: - Init
+    public init(navigationController: UINavigationController? = nil) {
+        self.navigationController = navigationController
+    }
+    public func createModule(using navigationController: UINavigationController? = nil) -> UIViewController {
+        let view = {{ name }}ViewController()
+        let interactor = {{ name }}Interactor()
+        let presenter = {{ name }}Presenter(view: view, interactor: interactor, router: self)
+        view.presenter = presenter
+        interactor.presenter = presenter
+        self.navigationController = navigationController
+        return view
+    }
+}
+
+// MARK: - {{ name }}RouterInterface
+extension {{ name }}Router: {{ name }}RouterInterface {
+}
