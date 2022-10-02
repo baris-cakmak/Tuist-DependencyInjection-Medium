@@ -5,7 +5,9 @@ private final class LoginModule: ModuleGenerator {
     func makeDependencies() -> [TargetDependency] {
         var dependencies: [TargetDependency] = []
         dependencies.append(contentsOf: [
+            AllDependencies.homeModuleInterfaceTargetDependency,
             AllDependencies.loginModuleInterfaceTargetDependency,
+            AllDependencies.jsonPlaceHolderKit,
             AllDependencies.swinject
         ])
         return dependencies
