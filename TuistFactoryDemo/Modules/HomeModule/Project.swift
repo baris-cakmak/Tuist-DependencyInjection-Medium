@@ -1,11 +1,10 @@
 import ProjectDescription
 import ProjectDescriptionHelpers
 
-private final class RootModule: ModuleGenerator {
+private final class HomeModule: ModuleGenerator {
     func makeDependencies() -> [TargetDependency] {
         var dependencies: [TargetDependency] = []
         dependencies.append(contentsOf: [
-            AllDependencies.rootModuleInterfaceTargetDependency,
             AllDependencies.homeModuleInterfaceTargetDependency,
             AllDependencies.loginModuleInterfaceTargetDependency
         ])
@@ -14,15 +13,15 @@ private final class RootModule: ModuleGenerator {
     func makeTargets() -> [Target] {
         var targets: [Target] = []
         targets.append(contentsOf: [
-            AllDependencies.rootModuleInterfaceTarget
+            AllDependencies.homeModuleInterfaceTarget
         ])
         return targets
     }
 }
-private let module = RootModule()
+private let module = HomeModule()
 
 let project = Project.makeTarget(
-    name: String(describing: RootModule.self),
+    name: String(describing: HomeModule.self),
     dependencies: module.makeDependencies(),
     targets: module.makeTargets()
 )

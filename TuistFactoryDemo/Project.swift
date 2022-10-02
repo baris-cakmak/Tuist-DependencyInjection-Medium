@@ -13,6 +13,8 @@ private func makeDependencies() -> [TargetDependency] {
         AllDependencies.factory,
         AllDependencies.jsonPlaceHolderKit,
         AllDependencies.rootModule,
+        AllDependencies.homeModule,
+        AllDependencies.loginModule
     ])
     return dependencies
 }
