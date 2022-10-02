@@ -36,8 +36,8 @@ extension DependencyContainer {
         container.register(RootModuleInterface.self) { resolver in
             RootRouter(
                 rootComponent: .init(
-                    homeModule: resolver.resolve(HomeModuleInterface.self)!,
-                    loginModule: resolver.resolve(LoginModuleInterface.self)!
+                    homeModule: resolver.resolve(Lazy<HomeModuleInterface>.self)!,
+                    loginModule: resolver.resolve(Lazy<LoginModuleInterface>.self)!
                 )
             )
         }
@@ -49,7 +49,7 @@ extension DependencyContainer {
         container.register(HomeModuleInterface.self) { resolver in
             HomeRouter(
                 homeComponent: .init(
-                    loginModule: resolver.resolve(LoginModuleInterface.self)!,
+                    loginModule: resolver.resolve(Lazy<LoginModuleInterface>.self)!,
                     jsonPlaceHolderService: resolver.resolve(JSONPlaceholderServiceInterface.self)!
                 )
             )
@@ -62,7 +62,7 @@ extension DependencyContainer {
         container.register(LoginModuleInterface.self) { resolver in
             LoginRouter(
                 loginComponent: .init(
-                    homeModule: resolver.resolve(HomeModuleInterface.self)!,
+                    homeModule: resolver.resolve(Lazy<HomeModuleInterface>.self)!,
                     jsonPlaceHolderService: resolver.resolve(JSONPlaceholderServiceInterface.self)!
                 )
             )

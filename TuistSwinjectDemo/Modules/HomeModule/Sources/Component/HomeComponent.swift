@@ -5,11 +5,11 @@ import JsonPlaceHolderKit
 
 public struct HomeComponent {
     // MARK: - Properties
-    let loginModule: LoginModuleInterface
+    let loginModule: Lazy<LoginModuleInterface>
     let jsonPlaceHolderService: JSONPlaceholderServiceInterface
     // MARK: - Init
     public init(
-        loginModule: LoginModuleInterface,
+        loginModule: Lazy<LoginModuleInterface>,
         jsonPlaceHolderService: JSONPlaceholderServiceInterface
     ) {
         self.loginModule = loginModule

@@ -5,12 +5,12 @@ import LoginModuleInterface
 
 public struct RootComponent {
     // MARK: - Properties
-    let homeModule: HomeModuleInterface
-    let loginModule: LoginModuleInterface
+    let homeModule: Lazy<HomeModuleInterface>
+    let loginModule: Lazy<LoginModuleInterface>
     // MARK: - Init
     public init(
-        homeModule: HomeModuleInterface,
-        loginModule: LoginModuleInterface
+        homeModule: Lazy<HomeModuleInterface>,
+        loginModule: Lazy<LoginModuleInterface>
     ) {
         self.homeModule = homeModule
         self.loginModule = loginModule
