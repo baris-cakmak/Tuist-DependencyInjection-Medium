@@ -41,6 +41,7 @@ extension DependencyContainer {
                 )
             )
         }
+        .inObjectScope(.transient)
     }
 }
 // MARK: - HomeDependencies
@@ -54,6 +55,7 @@ extension DependencyContainer {
                 )
             )
         }
+        .inObjectScope(.transient)
     }
 }
 // MARK: - LoginDependencies
@@ -67,6 +69,7 @@ extension DependencyContainer {
                 )
             )
         }
+        .inObjectScope(.transient)
     }
 }
 // MARK: - JsonPlaceHolderService
@@ -75,5 +78,6 @@ extension DependencyContainer {
         container.register(JSONPlaceholderServiceInterface.self) { _ in
             JSONPlaceholderService()
         }
+        .inObjectScope(.transient)
     }
 }
