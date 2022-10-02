@@ -6,6 +6,8 @@ private final class RootModule: ModuleGenerator {
         var dependencies: [TargetDependency] = []
         dependencies.append(contentsOf: [
             AllDependencies.rootModuleInterfaceTargetDependency,
+            AllDependencies.homeModuleInterfaceTargetDependency,
+            AllDependencies.loginModuleInterfaceTargetDependency,
             AllDependencies.swinject
         ])
         return dependencies
