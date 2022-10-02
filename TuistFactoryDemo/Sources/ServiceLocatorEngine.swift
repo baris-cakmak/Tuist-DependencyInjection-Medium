@@ -8,12 +8,22 @@
 import Foundation
 import RootModule
 import RootModuleInterface
+import HomeModule
+import HomeModuleInterface
+import LoginModule
+import LoginModuleInterface
 import Factory
 
 final class ServiceLocatorEngine {
     func injectDependencies() {
         Container.rootModule.register {
             RootRouter()
+        }
+        Container.homeModule.register {
+            HomeRouter()
+        }
+        Container.loginModule.register {
+            LoginRouter()
         }
     }
 }

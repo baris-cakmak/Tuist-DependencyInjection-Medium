@@ -6,7 +6,8 @@ private final class HomeModule: ModuleGenerator {
         var dependencies: [TargetDependency] = []
         dependencies.append(contentsOf: [
             AllDependencies.homeModuleInterfaceTargetDependency,
-            AllDependencies.loginModuleInterfaceTargetDependency
+            AllDependencies.loginModuleInterfaceTargetDependency,
+            AllDependencies.jsonPlaceHolderKit
         ])
         return dependencies
     }

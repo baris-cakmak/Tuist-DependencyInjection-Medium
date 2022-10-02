@@ -1,9 +1,11 @@
 import UIKit
 import RootModuleInterface
+import HomeModuleInterface
 import Factory
 
 // MARK: - RootRouterInterface
 protocol RootRouterInterface {
+    func navigateToHome()
 }
 // MARK: - RootModuleInterface
 public final class RootRouter: RootModuleInterface {
@@ -26,4 +28,11 @@ public final class RootRouter: RootModuleInterface {
 
 // MARK: - RootRouterInterface
 extension RootRouter: RootRouterInterface {
+    func navigateToHome() {
+        guard let homeModule = Container.homeModule() else {
+            return
+        }
+        let home = homeModule.createModule(using: navigationController)
+        navigationController?.pushViewController(home, animated: true)
+    }
 }

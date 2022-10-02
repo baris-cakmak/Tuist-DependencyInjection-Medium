@@ -2,6 +2,7 @@ import Foundation
 
 // MARK: - HomePresenterInterface
 protocol HomePresenterInterface {
+    func goToLogin()
 }
 // MARK: - HomeInteractorOutputInterface
 protocol HomeInteractorOutputInterface: AnyObject {
@@ -21,6 +22,9 @@ final class HomePresenter: HomePresenterInterface {
         self.view = view
         self.interactor = interactor
         self.router = router
+    }
+    func goToLogin() {
+        router?.navigateToLogin()
     }
 }
 // MARK: - HomeInteractorOutputInterface

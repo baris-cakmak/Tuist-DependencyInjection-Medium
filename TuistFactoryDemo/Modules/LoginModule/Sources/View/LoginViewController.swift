@@ -10,6 +10,10 @@ final class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "LoginViewController"
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.presenter?.goToHome()
+        }
     }
 }
 // MARK: - PresenterOutputInterface

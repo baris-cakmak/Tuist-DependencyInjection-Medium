@@ -1,9 +1,11 @@
 import UIKit
 import HomeModuleInterface
+import LoginModuleInterface
 import Factory
 
 // MARK: - HomeRouterInterface
 protocol HomeRouterInterface {
+    func navigateToLogin()
 }
 // MARK: - HomeModuleInterface
 public final class HomeRouter: HomeModuleInterface {
@@ -26,4 +28,11 @@ public final class HomeRouter: HomeModuleInterface {
 
 // MARK: - HomeRouterInterface
 extension HomeRouter: HomeRouterInterface {
+    func navigateToLogin() {
+        guard let loginModule = Container.loginModule() else {
+            return
+        }
+        let login = loginModule.createModule(using: navigationController)
+        navigationController?.pushViewController(login, animated: true)
+    }
 }
