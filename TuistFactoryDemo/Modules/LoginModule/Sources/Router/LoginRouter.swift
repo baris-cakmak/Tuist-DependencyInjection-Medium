@@ -16,8 +16,9 @@ public final class LoginRouter: LoginModuleInterface {
         self.navigationController = navigationController
     }
     public func createModule(using navigationController: UINavigationController? = nil) -> UIViewController {
+        @Injected(Container.jsonPlaceHolderService) var jsonPlaceHolderService
         let view = LoginViewController()
-        let interactor = LoginInteractor()
+        let interactor = LoginInteractor(jsonPlaceHolderService: jsonPlaceHolderService)
         let presenter = LoginPresenter(view: view, interactor: interactor, router: self)
         view.presenter = presenter
         interactor.presenter = presenter

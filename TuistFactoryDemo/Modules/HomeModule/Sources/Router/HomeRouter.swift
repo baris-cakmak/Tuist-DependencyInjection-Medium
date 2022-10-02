@@ -16,8 +16,9 @@ public final class HomeRouter: HomeModuleInterface {
         self.navigationController = navigationController
     }
     public func createModule(using navigationController: UINavigationController? = nil) -> UIViewController {
+        @Injected(Container.jsonPlaceHolderService) var jsonPlaceHolderService
         let view = HomeViewController()
-        let interactor = HomeInteractor()
+        let interactor = HomeInteractor(jsonPlaceHolderService: jsonPlaceHolderService)
         let presenter = HomePresenter(view: view, interactor: interactor, router: self)
         view.presenter = presenter
         interactor.presenter = presenter
