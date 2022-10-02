@@ -1,0 +1,11 @@
+import Foundation
+
+// MARK: - {{ name }}InteractorInterface
+protocol {{ name }}InteractorInterface {
+}
+
+final class {{ name }}Interactor: {{ name }}InteractorInterface {
+    // MARK: - Properties
+    weak var presenter: {{ name }}InteractorOutputInterface?
+    // MARK: - Init
+}

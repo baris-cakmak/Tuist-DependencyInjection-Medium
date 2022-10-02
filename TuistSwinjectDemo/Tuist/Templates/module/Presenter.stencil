@@ -1,0 +1,29 @@
+import Foundation
+
+// MARK: - {{ name }}PresenterInterface
+protocol {{ name }}PresenterInterface {
+}
+// MARK: - {{ name }}InteractorOutputInterface
+protocol {{ name }}InteractorOutputInterface: AnyObject {
+}
+
+final class {{ name }}Presenter: {{ name }}PresenterInterface {
+    // MARK: - Properties
+    private weak var view: {{ name }}PresenterOutputInterface?
+    private let interactor: {{ name }}InteractorInterface?
+    private let router: {{ name }}RouterInterface?
+    // MARK: - Init
+    init(
+        view: {{ name }}PresenterOutputInterface?,
+        interactor: {{ name }}InteractorInterface?,
+        router: {{ name }}RouterInterface?
+    ) {
+        self.view = view
+        self.interactor = interactor
+        self.router = router
+    }
+}
+// MARK: - {{ name }}InteractorOutputInterface
+extension {{ name }}Presenter: {{ name }}InteractorOutputInterface {
+    
+}

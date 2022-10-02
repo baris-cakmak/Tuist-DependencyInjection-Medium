@@ -1,0 +1,5 @@
+import UIKit
+import CoreModuleInterface
+
+public protocol {{ name }}ModuleInterface: CoreModuleInterface {
+}

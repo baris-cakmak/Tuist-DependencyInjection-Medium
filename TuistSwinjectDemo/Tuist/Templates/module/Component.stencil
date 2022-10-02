@@ -1,0 +1,11 @@
+import Foundation
+import Swinject
+
+public struct {{ name }}Component {
+    // MARK: - Properties
+    // MARK: - Init
+    public init(
+    ) {
+    }
+}
+

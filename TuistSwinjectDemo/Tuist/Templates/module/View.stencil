@@ -1,0 +1,18 @@
+import UIKit
+
+// MARK: - {{ name }}PresenterOutputInterface
+protocol {{ name }}PresenterOutputInterface: AnyObject {
+}
+final class {{ name }}ViewController: UIViewController {
+    // MARK: - Properties
+    var presenter: {{ name }}PresenterInterface?
+    // MARK: - Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "{{ name }}ViewController"
+    }
+}
+// MARK: - {{ name }}PresenterOutputInterface
+extension {{ name }}ViewController: {{ name }}PresenterOutputInterface {
+    
+}
