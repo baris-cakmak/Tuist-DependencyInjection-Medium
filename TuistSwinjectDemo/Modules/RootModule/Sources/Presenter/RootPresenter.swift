@@ -2,6 +2,7 @@ import Foundation
 
 // MARK: - RootPresenterInterface
 protocol RootPresenterInterface {
+    func goToHome()
 }
 // MARK: - RootInteractorOutputInterface
 protocol RootInteractorOutputInterface: AnyObject {
@@ -21,6 +22,9 @@ final class RootPresenter: RootPresenterInterface {
         self.view = view
         self.interactor = interactor
         self.router = router
+    }
+    func goToHome() {
+        router?.navigateToHome()
     }
 }
 // MARK: - RootInteractorOutputInterface

@@ -10,6 +10,10 @@ final class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "RootViewController"
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.presenter?.goToHome()
+        }
     }
 }
 // MARK: - PresenterOutputInterface

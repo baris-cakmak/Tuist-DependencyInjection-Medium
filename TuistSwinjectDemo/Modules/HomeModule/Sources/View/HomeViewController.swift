@@ -10,6 +10,10 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "HomeViewController"
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.presenter?.goToLogin()
+        }
     }
 }
 // MARK: - PresenterOutputInterface

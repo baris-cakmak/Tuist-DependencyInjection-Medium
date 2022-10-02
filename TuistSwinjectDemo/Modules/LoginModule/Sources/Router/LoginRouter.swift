@@ -3,6 +3,7 @@ import LoginModuleInterface
 
 // MARK: - LoginRouterInterface
 protocol LoginRouterInterface {
+    func navigateToHome()
 }
 // MARK: - LoginModuleInterface
 public final class LoginRouter: LoginModuleInterface {
@@ -30,4 +31,8 @@ public final class LoginRouter: LoginModuleInterface {
 
 // MARK: - LoginRouterInterface
 extension LoginRouter: LoginRouterInterface {
+    func navigateToHome() {
+        let home = loginComponent.homeModule.instance.createModule(using: navigationController)
+        navigationController?.pushViewController(home, animated: true)
+    }
 }
